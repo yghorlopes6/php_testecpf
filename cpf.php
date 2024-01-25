@@ -1,9 +1,9 @@
 <?php
 	//***********************************************************************************************
-	// AUTOR: Ricardo Erick Rebêlo
-	// Objetivo: funções para tratar o CPF
-	// Alterações:
-	// 0.1   24/04/2023 - Começo da primeira conversão
+	// AUTOR: Ricardo Erick RebÃªlo
+	// Objetivo: funÃ§Ãµes para tratar o CPF
+	// AlteraÃ§Ãµes:
+	// 0.1   24/04/2023 - ComeÃ§o da primeira conversÃ£o
 
 	namespace jacknpoe;
 
@@ -21,19 +21,9 @@
 				return false;
 			}
 			
-			if ($cpf == '00000000000' || 
-				$cpf == '11111111111' || 
-				$cpf == '22222222222' || 
-				$cpf == '33333333333' || 
-				$cpf == '44444444444' || 
-				$cpf == '55555555555' || 
-				$cpf == '66666666666' || 
-				$cpf == '77777777777' || 
-				$cpf == '88888888888' || 
-				$cpf == '99999999999')
-			{
-				return false;
-			}
+			if (preg_match('/(\d)\1{10}/', $cpf)) {
+            		  return false;
+       			 }
 			 	
 			for ($tempo = 9; $tempo <= 10; $tempo++)
 			{
